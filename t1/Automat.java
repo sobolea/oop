@@ -13,7 +13,6 @@ public class Automat {
     public Product getProduct(String name){
         for (Product pr : listProduct) {
             if(pr.getName() == name){
-                pr.setQuantity(pr.getQuantity() - 1);
                 return pr;
             }
         }

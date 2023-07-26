@@ -36,9 +36,10 @@ public class task1 {
         Automat list = new Automat();
         list.initProduct(prList);
 
-        Automat listnew = new HotBeverageAutomat();
-        listnew.initProduct(hotProduct);
-        System.out.println(listnew.getProduct("Hot chocolate"));
+        HotBeverageAutomat listnew = new HotBeverageAutomat();
+        listnew.initHotBeverage(hotProduct);
+
+        // System.out.println(hotProduct.getProduct("Hot chocolate", 0.3, 90));
         System.out.println(list.getProduct("limon"));
 
     }
