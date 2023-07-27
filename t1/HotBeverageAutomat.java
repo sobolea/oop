@@ -1,6 +1,5 @@
 package t1;
-// Не понимаю как мы можем получить значение volume, оно же в классе HotBeverage, а у нас список из Product
-//Надо создавать ещё один список? Мы никак не можем считать значение volume из класса product?
+// Не понимаю почему не проходит проверку в 17 строке
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +12,12 @@ public class HotBeverageAutomat extends Automat {
         newList = list;
     }
 
-    public HotBeverage getProduct(String name, double volume, int temp){
+    public Product getProduct(String name, double volume, int temp){
         for (Product pr : newList) {
-            if(pr.getName() == name & pr.getVolume() == volume & pr.getTemp() == temp){
+            if(pr instanceof HotBeverage & pr.getName() == name & ((HotBeverage) pr).getVolume() == volume & ((HotBeverage) pr).getTemp() == temp){
                 return pr;
             }
         }
         return null;
-    }
-
 }
+    }
