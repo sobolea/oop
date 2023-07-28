@@ -18,6 +18,4 @@ public class Automat {
         }
         return null;
     }
-
-   
 }
