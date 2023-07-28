@@ -28,20 +28,21 @@ public class task1 {
         prList.add(p3);
         prList.add(p4);
 
-        prList.add(p5);
-        prList.add(p6);
-        prList.add(p7);
+        List<Product> hot = new ArrayList<>();
+        hot.add(p5);
+        hot.add(p6);
+        hot.add(p7);
         
         Automat list = new Automat();
         list.initProduct(prList);
 
         HotBeverageAutomat listnew = new HotBeverageAutomat();
-        listnew.initProduct(prList);
+        listnew.initProduct(hot);
 
-        // System.out.println((listnew).getProduct("Hot chocolate", 0.3, 9));
-        System.out.println((listnew).getProduct("Latte", 0.4, 80));
+        System.out.println(listnew.getProduct("Hot chocolate", 0.3, 90));
+        System.out.println(listnew.getProduct("Latte", 0.9, 80));
 
-        // System.out.println(list.getProduct("limon"));
+        System.out.println(list.getProduct("limon"));
 
     }
 }
