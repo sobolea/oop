@@ -11,6 +11,9 @@ package t1;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Scanner;
+
+import oop_java.Human;
 
 public class task1 {
     public static void main(String[] args) {
@@ -26,23 +29,39 @@ public class task1 {
         prList.add(p1);
         prList.add(p2);
         prList.add(p3);
-        prList.add(p4);
-
-        List<Product> hot = new ArrayList<>();
-        hot.add(p5);
-        hot.add(p6);
-        hot.add(p7);
-        
+        prList.add(p4);        
+        prList.add(p5);
+        prList.add(p6);
+        prList.add(p7);
         Automat list = new Automat();
         list.initProduct(prList);
 
         HotBeverageAutomat listnew = new HotBeverageAutomat();
-        listnew.initProduct(hot);
+        listnew.initProduct(prList);
 
-        System.out.println(listnew.getProduct("Hot chocolate", 0.3, 90));
-        System.out.println(listnew.getProduct("Latte", 0.9, 80));
+        // System.out.println(listnew.getProduct("Hot chocolate", 0.3, 90));
+        // System.out.println(listnew.getProduct("Latte", 0.9, 80));
 
-        System.out.println(list.getProduct("limon"));
+        // System.out.println(list.getProduct("limon"));
+
+        ArrayList<String> products = new ArrayList<>();
+        String pr = "-";
+        Scanner input = new Scanner(System.in);
+        System.out.println("input product(enter to end): ");
+            pr = input.nextLine();
+            products.add(pr);
+        while (pr != ""){
+            System.out.println("input product(enter to end): ");
+            pr = input.nextLine();
+            products.add(pr);
+        }
+        input.close();
+        Automat au = new Automat();
+        Human order = new Human("Ann", true, true, 100, au);
+        
+        System.out.println(products);
+        System.out.println(order.makeOrder(products));
+        System.out.println(au.createOrder(order.makeOrder(products)));
 
     }
 }
