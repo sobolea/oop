@@ -1,8 +1,9 @@
 package t1;
 
 import java.util.Calendar;
+import java.util.Comparator;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product>{
     private String name;
     private Integer price;
     private Integer quantity;
@@ -49,6 +50,12 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return "name: " + name +"\nprice: " + price +" quantity: " + quantity +" best before: " + bestBefore.get(Calendar.YEAR) +"/" + bestBefore.get(Calendar.MONTH)+"/" + bestBefore.get(Calendar.DAY_OF_MONTH);
+        return "name: " + name +", price: " + price +" quantity: " + quantity +" best before: " + bestBefore.get(Calendar.YEAR) +"/" + bestBefore.get(Calendar.MONTH)+"/" + bestBefore.get(Calendar.DAY_OF_MONTH) ;
+    }
+    @Override
+    public int compareTo(Product o) {
+        return this.getPrice() - o.getPrice(); 
     }
 }
+
+

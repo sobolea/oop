@@ -21,4 +21,6 @@ public class Beverage extends Product {
         return super.toString() + " volume: " + volume;
     }
   
+    
+  
 }

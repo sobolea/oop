@@ -9,6 +9,8 @@ initProducts (List <Product>) сохраняющий в себе список и
 package t1;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
@@ -25,7 +27,7 @@ public class task1 {
         Product p6 = new HotBeverage("Latte", 80, 2, new GregorianCalendar(2020, 2, 6), 0.4, 80);
         Product p7 = new HotBeverage("Cappuchino", 90, 5, new GregorianCalendar(2020, 6, 5), 0.2, 70);
 
-        List<Product> prList = new ArrayList<>();
+        ArrayList<Product> prList = new ArrayList<>();
         prList.add(p1);
         prList.add(p2);
         prList.add(p3);
@@ -44,24 +46,37 @@ public class task1 {
 
         // System.out.println(list.getProduct("limon"));
 
-        ArrayList<String> products = new ArrayList<>();
-        String pr = "-";
-        Scanner input = new Scanner(System.in);
-        System.out.println("input product(enter to end): ");
-            pr = input.nextLine();
-            products.add(pr);
-        while (pr != ""){
-            System.out.println("input product(enter to end): ");
-            pr = input.nextLine();
-            products.add(pr);
-        }
-        input.close();
-        Automat au = new Automat();
-        Human order = new Human("Ann", true, true, 100, au);
+
+        // ArrayList<String> products = new ArrayList<>();
+        // String pr = "-";
+        // Scanner input = new Scanner(System.in);
+        // System.out.println("input product(enter to end): ");
+        //     pr = input.nextLine();
+        //     products.add(pr);
+        // while (pr != ""){
+        //     System.out.println("input product(enter to end): ");
+        //     pr = input.nextLine();
+        //     products.add(pr);
+        // }
+        // input.close();
+        // Automat au = new Automat();
+        // Human order = new Human("Ann", true, true, 100, au);
         
-        System.out.println(products);
-        System.out.println(order.makeOrder(products));
-        System.out.println(au.createOrder(order.makeOrder(products)));
+
+        // System.out.println(products);
+        // System.out.println(order.makeOrder(products));
+        // System.out.println(au.createOrder(order.makeOrder(products)));
+
+        System.out.println(prList);  
+        System.out.println();
+        // Collections.sort(prList);      
+        // System.out.println(prList);  
+
+        Comparator quantComp = new quantityComparator();
+        Collections.sort(prList, quantComp);
+        System.out.println(prList);  
 
     }
+
+
 }
