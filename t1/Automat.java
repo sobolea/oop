@@ -34,4 +34,9 @@ public class Automat {
         Order newOrder = new Order(newList, sumPrices);
         return newOrder;
     }
+
+    public void AddProduct(Product pr){
+        listProduct.add(pr);
+    }
+
 }

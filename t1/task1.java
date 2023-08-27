@@ -34,7 +34,7 @@ public class task1 {
         prList.add(p4);        
         prList.add(p5);
         prList.add(p6);
-        prList.add(p7);
+ 
         Automat list = new Automat();
         list.initProduct(prList);
 
@@ -67,15 +67,33 @@ public class task1 {
         // System.out.println(order.makeOrder(products));
         // System.out.println(au.createOrder(order.makeOrder(products)));
 
-        System.out.println(prList);  
-        System.out.println();
+        // System.out.println(prList);  
+        // System.out.println();
+
         // Collections.sort(prList);      
         // System.out.println(prList);  
 
-        Comparator quantComp = new quantityComparator();
-        Collections.sort(prList, quantComp);
-        System.out.println(prList);  
+        //Comparator quantComp = new quantityComparator();
+        //Collections.sort(prList, quantComp);
+        //System.out.println(prList);  
 
+
+        // AddProduct add = new AddProduct<>();
+        // add.addPr(p7, listnew);
+        // System.out.println(prList);  
+
+
+        for (Product pr : prList) {
+            System.out.println(pr);
+        }
+        System.out.println();
+        
+        AddProduct add = new AddProduct<>();
+        add.addPr(p7, listnew);  
+
+        for (Product pr : prList) {
+            System.out.println(pr);
+        }
     }
 
 
